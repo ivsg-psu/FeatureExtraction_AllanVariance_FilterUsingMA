@@ -81,8 +81,25 @@ axes('Position',axis_position,'XAxisLocation','top',...
 ax2 = gca;
 xlabel(ax2,'Correlation Time $[s]$','Interpreter','latex','FontSize',18)
 
-%% Plot AVAR of the test signal with confidence bounds
+%% Plot test signal against time
+min_yaxis   = min(test_signal(1:2000*sampling_frequency));
+max_yaxis   = max(test_signal(1:2000*sampling_frequency));
+range_yaxis = max_yaxis-min_yaxis;
 figure(02)
+clf
+width = 540; height = 400; right = 100; bottom = 100;
+set(gcf, 'position', [right, bottom, width, height])
+hold on
+grid on
+plot(time_vector,test_signal,'k.','Markersize',1)
+set(gca,'Fontsize',13)
+ylabel('Amplitude $[Unit]$','Interpreter','latex','FontSize',18)
+xlabel('Time $[s]$','Interpreter','latex','FontSize',18)
+ylim([min_yaxis-0.1*(range_yaxis) max_yaxis+0.1*(range_yaxis)])
+xlim([0 2000])
+
+%% Plot AVAR of the test signal with confidence bounds
+figure(03)
 clf
 width = 540; height = 448; right = 100; bottom = 100;
 axis_position = [0.1354, 70.515/height, 0.7696, 307.32/height];
@@ -106,20 +123,3 @@ axes('Position',axis_position,'XAxisLocation','top',...
      'xtick',[1e-1 1e1 1e3],'Color','none','Fontsize',13,'Box','off');
 ax2 = gca;
 xlabel(ax2,'Correlation Time $[s]$','Interpreter','latex','FontSize',18)
-
-%% Plot test signal against time
-min_yaxis   = min(test_signal(1:2000*sampling_frequency));
-max_yaxis   = max(test_signal(1:2000*sampling_frequency));
-range_yaxis = max_yaxis-min_yaxis;
-figure(03)
-clf
-width = 540; height = 400; right = 100; bottom = 100;
-set(gcf, 'position', [right, bottom, width, height])
-hold on
-grid on
-plot(time_vector,test_signal,'k.','Markersize',1)
-set(gca,'Fontsize',13)
-ylabel('Amplitude $[Unit]$','Interpreter','latex','FontSize',18)
-xlabel('Time $[s]$','Interpreter','latex','FontSize',18)
-ylim([min_yaxis-0.1*(range_yaxis) max_yaxis+0.1*(range_yaxis)])
-xlim([0 2000])

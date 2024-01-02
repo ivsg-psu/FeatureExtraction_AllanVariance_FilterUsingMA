@@ -23,7 +23,7 @@ power_spectral_density  = 0.0004; % [unit^2 s]
 random_walk_coefficient = 0.02; % [unit/sqrt(s)]
 
 %% Plot the results
-%% AVAR of test signals with different sampling frequency
+%%% AVAR of test signals with different sampling frequency
 legend_cell = cell(numel(list_of_sampling_frequency),1);
 figure(01)
 clf
