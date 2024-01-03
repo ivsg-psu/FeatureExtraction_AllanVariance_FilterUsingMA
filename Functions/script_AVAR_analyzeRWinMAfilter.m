@@ -155,9 +155,9 @@ subplot(1,2,1)
 axis_position = [75/width, 0.1567, 415.6/width, 0.7683];
 hold on
 grid on
-xline(2,'c--','Linewidth',2.4)
+xline(2,'c--','Linewidth',1.2)
 xline(64,'b','Linewidth',1.2)
-xline(2048,'m-.','Linewidth',2.4)
+xline(2048,'m-.','Linewidth',1.2)
 plot(list_of_correlation_intervals,...
      sum(0.5*(estimated_AVAR(1:end-2,:)+estimated_AVAR(2:end-1,:)),1)','k','Linewidth',1.2)
 legend('$M=2$','$M=64$','$M=2$,$048$','Interpreter','latex','FontSize',13)
@@ -173,17 +173,17 @@ axis_position = [(75+100+415.584)/width, 0.1567, 415.6/width, 0.7683];
 subplot(1,2,2)
 hold on
 grid on
-plot(-1,-1,'Color',[0.7 0.7 0.7],'Linewidth',4)
+plot(-1,-1,'Color',[0.7 0.7 0.7],'Linewidth',3)
 plot(-1,-1,'c.','Markersize',10)
 plot(-1,-1,'b','Linewidth',1.2)
 plot(-1,-1,'m','Linewidth',1.2)
 
-plot(time_vector,random_walk(end-number_of_time_steps+1:end),...
-     'Color',[0.7 0.7 0.7],'Linewidth',4)
-
 moving_average = filter(ones(1,2)/2,1,input_signal);
 moving_average = moving_average(end-number_of_time_steps+1:end);
 plot(time_vector,moving_average,'c.','Markersize',4)
+
+plot(time_vector,random_walk(end-number_of_time_steps+1:end),...
+     'Color',[0.7 0.7 0.7],'Linewidth',3)
 
 moving_average = filter(ones(1,64)/64,1,input_signal);
 moving_average = moving_average(end-number_of_time_steps+1:end);
