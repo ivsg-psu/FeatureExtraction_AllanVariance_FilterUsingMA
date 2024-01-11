@@ -15,7 +15,7 @@ rng('default') % set random seeds
 
 number_of_time_steps = 16385;
 p = floor(log2(number_of_time_steps));
-list_of_correlation_intervals = 2.^(1:(p-1))'; % list of correlation intervals
+list_of_correlation_intervals = 2.^(0:(p-1))'; % list of correlation intervals
 
 %% Example 1: White Noise
 power_spectral_density = 0.0025; % PSD of white noise [unit^2 s]
