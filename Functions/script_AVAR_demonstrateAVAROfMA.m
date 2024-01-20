@@ -64,7 +64,7 @@ set(gcf, 'position', [right, bottom, width, height])
 hold on
 grid on
 plot((0:input_length-1)',input_data(window_length:end),'k.','Markersize',13)
-plot((0:input_length-1)',moving_average,'c*','Markersize',8)
+plot((0:input_length-1)',moving_average,'m*','Markersize',8)
 set(gca,'xtick',[3 7 11 15 19],'Fontsize',13)
 legend('Input','Output','Location','best','Interpreter','latex','Fontsize',13)
 ylabel('Amplitude $[Unit]$','Interpreter','latex','Fontsize',18)
@@ -115,9 +115,9 @@ grid on
 plot(list_of_correlation_intervals,avar_input,'k','Linewidth',1.2)
 plot(list_of_correlation_intervals,avar_input_lb,'k--','Linewidth',1)
 plot(list_of_correlation_intervals,avar_input_ub,'k-.','Linewidth',1)
-plot(list_of_correlation_intervals,avar_output,'c','Linewidth',1.2)
-plot(list_of_correlation_intervals,avar_output_lb,'c--','Linewidth',1)
-plot(list_of_correlation_intervals,avar_output_ub,'c-.','Linewidth',1)
+plot(list_of_correlation_intervals,avar_output,'m','Linewidth',1.2)
+plot(list_of_correlation_intervals,avar_output_lb,'m--','Linewidth',1)
+plot(list_of_correlation_intervals,avar_output_ub,'m-.','Linewidth',1)
 legend_cell = cell(6,1);
 legend_cell{1} = 'Input';
 legend_cell{2} = ['Input: ' num2str(100*confidence_coefficient) '$\%$ LB'];
@@ -150,9 +150,9 @@ axis_position = [0.1354, 70.515/height, 0.7696, 307.32/height];
 set(gcf, 'position', [right, bottom, width, height])
 hold on
 grid on
-plot(list_of_correlation_intervals,avar_output,'c','Linewidth',1.2)
-plot(list_of_correlation_intervals,avar_output_lb,'c--','Linewidth',1)
-plot(list_of_correlation_intervals,avar_output_ub,'c-.','Linewidth',1)
+plot(list_of_correlation_intervals,avar_output,'m','Linewidth',1.2)
+plot(list_of_correlation_intervals,avar_output_lb,'m--','Linewidth',1)
+plot(list_of_correlation_intervals,avar_output_ub,'m-.','Linewidth',1)
 plot(list_of_correlation_intervals,calculated_avar,'k','Linewidth',1.2)
 legend('Estimated',[num2str(100*confidence_coefficient) '$\%$ LB'],...
        [num2str(100*confidence_coefficient) '$\%$ UB'],'Calculated',...
